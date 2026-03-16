@@ -1,22 +1,27 @@
 package com.spring.mvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WelcomeController {
 
-//	@RequestMapping(value="/login")      // 	@RequestMapping("/login") ise aise bhi likh skte he becouse isme value automatic le leta he
-	@GetMapping(value="/")
+	@GetMapping("/")
 	public String greeting() {
-		System.out.println("WelcomeController.getting()");
+		System.out.println("WelcomeController.greeting()");
 		return "index";
 	}
-	
-	@GetMapping(value="/sign-up")
-	public String creatUser() {
-		System.out.println("welcomeControlar.greeting()");
+
+	@GetMapping("/req-param")
+	public String createUser(@RequestParam(name = "user") String name, Model model) {
+		
+		model.addAttribute("user", name);
+
+		System.out.println("WelcomeController.greeting :" + name);
+
 		return "success";
 	}
+
 }
