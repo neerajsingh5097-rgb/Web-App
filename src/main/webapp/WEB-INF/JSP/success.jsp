@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="pink">
 
-<h1> Welcome ! this is your profile</h1>
+<h1> Welcome ! this is your profile Mr.${user}</h1>
 
 </body>
 </html>
