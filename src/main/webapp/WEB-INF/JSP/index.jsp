@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,8 @@
 </head>
 <body bgcolor="pink">
 
-<h1> Hello this my First spring MVc Project  </h1>
+
+	<h1>Hello This is my First Spring MVC PROJECT</h1>
 
 </body>
 </html>
