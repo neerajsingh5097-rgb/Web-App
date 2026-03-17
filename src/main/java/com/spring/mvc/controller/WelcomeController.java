@@ -41,34 +41,35 @@ public class WelcomeController {
 		return "success";
 	}
 
-//	@GetMapping("/getCookie")
-//	public String getCookieVal(@CookieValue(name = "JSESSIONID") String JSESSIONID, Model model) {
+	@GetMapping("/getCookie")
+	public String getCookieVal(@CookieValue(name = "JSESSIONID") String JSESSIONID, Model model) {
+
+		model.addAttribute("cookie", "Your JSESSIONID is : " + JSESSIONID);
+
+		System.out.println("JSESSIONID : " + JSESSIONID);
+
+		return "cookieVal";
+	
+	}
+//	@GetMapping("/getMyCookie")
+//	public String getMyCookieVal(@CookieValue(name = "firstCookie" , defaultValue = "DefaultCookie") String firstCookie, Model model) {
 //
-//		model.addAttribute("cookie", "Your JSESSIONID is : " + JSESSIONID);
+//		model.addAttribute("firstCookie",  firstCookie);
 //
-//		System.out.println("JSESSIONID : " + JSESSIONID);
+//		System.out.println("getMyCookieVal : " + firstCookie);
 //
 //		return "cookieVal";
 //	}
-	@GetMapping("/getMyCookie")
-	public String getMyCookieVal(@CookieValue(name = "firstCookie" , defaultValue = "DefaultCookie") String firstCookie, Model model) {
-
-		model.addAttribute("firstCookie",  firstCookie);
-
-		System.out.println("getMyCookieVal : " + firstCookie);
-
-		return "cookieVal";
-	}
-
-	@GetMapping("/setCookie")
-	public String setCookieVal(HttpServletResponse response,Model model) {
-
-		Cookie cookie1 = new Cookie("firstCookie", "SensitiveInformation");
-		cookie1.setMaxAge(10);
-		response.addCookie(cookie1);
-		System.out.println("WelcomeController.setCookieVal()");
-
-		return "redirect:/getMyCookie";
-	}
+//
+//	@GetMapping("/setCookie")
+//	public String setCookieVal(HttpServletResponse response,Model model) {
+//
+//		Cookie cookie1 = new Cookie("firstCookie", "SensitiveInformation");
+//		cookie1.setMaxAge(10);
+//		response.addCookie(cookie1);
+//		System.out.println("WelcomeController.setCookieVal()");
+//
+//		return "redirect:/getMyCookie";
+//	}
 
 }
