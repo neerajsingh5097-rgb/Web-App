@@ -61,15 +61,15 @@ public class WelcomeController {
 //		return "cookieVal";
 //	}
 //
-//	@GetMapping("/setCookie")
-//	public String setCookieVal(HttpServletResponse response,Model model) {
-//
-//		Cookie cookie1 = new Cookie("firstCookie", "SensitiveInformation");
-//		cookie1.setMaxAge(10);
-//		response.addCookie(cookie1);
-//		System.out.println("WelcomeController.setCookieVal()");
-//
-//		return "redirect:/getMyCookie";
-//	}
+	@GetMapping("/setCookie")
+	public String setCookieVal(HttpServletResponse response,Model model) {
+
+		Cookie cookie1 = new Cookie("firstCookie", "SensitiveInformation");
+		cookie1.setMaxAge(10);
+		response.addCookie(cookie1);
+		System.out.println("WelcomeController.setCookieVal()");
+
+		return "redirect:/getMyCookie";
+	}
 
 }
