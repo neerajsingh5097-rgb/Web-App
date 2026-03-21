@@ -1,6 +1,6 @@
 package com.spring.mvc.model;
 
-public class Employee {
+public class Employee {     
 	
 	private int id;
 	private String username,department,address;
