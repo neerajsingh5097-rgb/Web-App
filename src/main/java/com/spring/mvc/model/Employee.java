@@ -1,10 +1,17 @@
 package com.spring.mvc.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
-public class Employee {     
+@Entity
+public class Employee {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String username,department,address;
 
 	public Employee() {
@@ -14,7 +21,7 @@ public class Employee {
 
 	public Employee(int id,String username, String department, String address) {
 		super();
-		this.id=id;
+		this.id = id;
 		this.username = username;
 		this.department = department;
 		this.address = address;
@@ -57,8 +64,5 @@ public class Employee {
 		return "Employee [id=" + id + ", username=" + username + ", department=" + department + ", address=" + address
 				+ "]";
 	}
-
-	
-	
 
 }

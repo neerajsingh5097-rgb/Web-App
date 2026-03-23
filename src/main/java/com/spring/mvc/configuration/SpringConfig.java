@@ -1,4 +1,3 @@
-
 package com.spring.mvc.configuration;
 
 import java.util.Properties;
